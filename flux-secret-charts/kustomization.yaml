@@ -1,0 +1,13 @@
+resources:
+  - namespace.yaml
+  - helmrepo-external-secrets.yaml
+  - helmrelease-external-secrets.yaml
+  - helmrelease-tls-secret.yaml
+
+# Optional: If you're keeping the TLS chart in the same repo under /charts
+helmCharts:
+  - name: tls-secret
+    namespace: default
+    releaseName: tls-secret
+    version: 0.1.0
+    chartPath: ./charts/tls-secret
